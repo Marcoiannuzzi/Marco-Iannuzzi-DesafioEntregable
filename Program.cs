@@ -8,25 +8,26 @@ using POO.Models;
 //   RESULTADO DESAFIO: 
 
 
-//Traer Usuario(recibe un int) X
+//Traer Usuario(recibe un int)
 
-//Console.WriteLine("Bienvenido, ingrese el Id del usuario: ");
-//long usuarioId = int.Parse(Console.ReadLine());
-//Usuario usuarioPorId = UsuarioController.GetUsuario(usuarioId);
-//Console.WriteLine("---------------------------");
-//Console.WriteLine(usuarioPorId.ToString());
+Console.WriteLine("Bienvenido, ingrese el Id del usuario: ");
+long usuarioId = int.Parse(Console.ReadLine());
+Usuario usuarioPorId = UsuarioController.GetUsuario(usuarioId);
+Console.WriteLine("---------------------------");
+Console.WriteLine(usuarioPorId.ToString());
 
 //-----------------------------------------------
 
 
 //Traer Productos(recibe un id de usuario y, devuelve una lista con todos los productos cargado por ese usuario)
-//Console.WriteLine("Ingresa el Id del Usuario para traer los pruductos cargados");
-//var idUsuario = int.Parse(Console.ReadLine());
-//var listaProductos = ProductoController.GetProductosbyId(idUsuario);
-//foreach (var product in listaProductos)
-//{
-//    Console.WriteLine(product.Descripciones);
-//}
+
+Console.WriteLine("Ingresa el Id del Usuario para traer los pruductos cargados");
+var idUsuario = int.Parse(Console.ReadLine());
+var listaProductos = ProductoController.GetProductosbyId(idUsuario);
+foreach (var product in listaProductos)
+{
+    Console.WriteLine(product.Descripciones);
+}
 
 
 //-----------------------------------------------
@@ -47,14 +48,14 @@ foreach (var item in listaProductosVendidos)
 
 //Traer Ventas(recibe el id del usuario y devuelve un a lista de Ventas realizadas por ese usuario)
 
-//Console.WriteLine("Indica el id de usuario para traer susu ventas:");
-//var id = int.Parse(Console.ReadLine());
-//var listaVentas = VentaController.GetVentas(id);
+Console.WriteLine("Indica el id de usuario para traer susu ventas:");
+var id = int.Parse(Console.ReadLine());
+var listaVentas = VentaController.GetVentas(id);
 
-//foreach (var item in listaVentas)
-//{
-//    Console.WriteLine(item.Id);
-//}
+foreach (var item in listaVentas)
+{
+    Console.WriteLine(item.Id);
+}
 
 
 
@@ -63,12 +64,12 @@ foreach (var item in listaProductosVendidos)
 
 //Inicio de sesión (recibe un usuario y contraseña y devuelve un objeto Usuario) X
 
-//Console.WriteLine("Bienvenido, ingrese usuario: ");
-//var nombreUsuario = Console.ReadLine();
-//Console.WriteLine("---------------------------");
-//Console.WriteLine("Ingrese su contraseña: ");
-//var constrasenia = Console.ReadLine();
-//Console.WriteLine("-------------------------");
-//Usuario usuarioSeleccionado = UsuarioController.GetUsuario(nombreUsuario, constrasenia);
-//Console.WriteLine("---------------------------");
-//Console.WriteLine(usuarioSeleccionado.ToString());
+Console.WriteLine("Bienvenido, ingrese usuario: ");
+var nombreUsuario = Console.ReadLine();
+Console.WriteLine("---------------------------");
+Console.WriteLine("Ingrese su contraseña: ");
+var constrasenia = Console.ReadLine();
+Console.WriteLine("-------------------------");
+Usuario usuarioSeleccionado = UsuarioController.GetUsuario(nombreUsuario, constrasenia);
+Console.WriteLine("---------------------------");
+Console.WriteLine(usuarioSeleccionado.ToString());
