@@ -34,12 +34,43 @@ namespace POO.Controllers
                         list.Add(temporalProd);
                     }
                 }
+                return list;
+            }
 
-                foreach (var item in list)
+        }
+
+        public static List<Producto> GetProductosbyId(long idUsuario)
+        {
+            string connectionString = "Data Source=MARCO\\SQLEXPRESS;Initial Catalog=SistemaGestion;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand comando = new SqlCommand("SELECT * FROM Producto WHERE IdUsuario = @id", connection);
+                var param = new SqlParameter("id", idUsuario);
+                comando.Parameters.Add(param);
+
+
+                connection.Open();
+                SqlDataReader reader = comando.ExecuteReader();
+
+
+                List <Producto> list = new List<Producto>();
+
+                if (reader.HasRows)
                 {
-                    Console.WriteLine(item.Id);
+                    while (reader.Read())
+                    {
+                        Producto temporalProd = new Producto()
+                        {
+                            Id = reader.GetInt64(0),
+                            Descripciones = reader.GetString(1),
+                            Costo = reader.GetDecimal(2),
+                            PrecioDeVenta = reader.GetDecimal(3),
+                            Stock = reader.GetInt32(4),
+                            IdUsuario = reader.GetInt64(5),
+                        };
+                        list.Add(temporalProd);
+                    }
                 }
-
                 return list;
             }
 
