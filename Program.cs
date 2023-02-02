@@ -4,7 +4,7 @@ using POO.Models;
 
 //Clases del modelo para obtener los datos: Producto, Venta, ProductoVenta, Usuario
 //Métodos implementando ADO.NET:
-//Traer Usuario(recibe un int)
+//Traer Usuario(recibe un int) X
 //Traer Productos(recibe un id de usuario y, devuelve una lista con todos los productos cargado por ese usuario)
 //Traer ProductosVendidos(recibe el id del usuario y devuelve una lista de productos vendidos por ese usuario) x
 //Traer Ventas(recibe el id del usuario y devuelve un a lista de Ventas realizadas por ese usuario)
